@@ -1,0 +1,244 @@
+// 1.)User Information Collection:
+// userProfile.js
+
+// Collecting user information using prompt()
+let fullName = prompt("Please enter your full name (first and last name):");
+// Prompt for the user's age
+let age = prompt("Please enter your age:");
+// Prompt for the user's favorite number
+let favoriteNumber = prompt("Please enter your favorite number:");
+// Prompt for the user's favorite color
+let favoriteColor = prompt("Please enter your favorite color:");
+
+// Logging the collected information to the console
+console.log("User Information:");
+console.log("Full Name: " + fullName); // Output the full name
+console.log("Age: " + age); // Output the age
+console.log("Favorite Number: " + favoriteNumber); // Output the favorite number
+console.log("Favorite Color: " + favoriteColor); // Output the favorite color
+
+
+#2.)User Information Collection:
+// classSubjects.js
+
+// Collecting information from the user using the prompt() function
+let subjectTitle = prompt("Please enter the Subject Title:"); // Get the subject title
+let classSchedule = prompt("Please enter the Class Schedule (Time, Days):"); // Get the schedule
+let classroom = prompt("Please enter the Classroom:"); // Get the classroom
+let classInstructor = prompt("Please enter the Class Instructor:"); // Get the instructor's name
+let studentName = prompt("Please enter your name:"); // Get the student's name
+
+// Logging the collected information to the console in the specified format
+console.log(`${studentName} is currently enrolled in ${subjectTitle} with a class schedule of ${classSchedule} at room ${classroom}. The instructor for the subject is ${classInstructor}.`);
+
+//3.)User Age Categorization:
+// Prompt the user to enter their age
+let age = prompt("Please enter your age:");
+
+// Convert the input to a number
+age = Number(age);
+
+// Check if the input is a valid number
+if (isNaN(age)) {
+    console.log("Please enter a valid number for your age.");
+} else {
+    // Use conditional statements to categorize the age
+    if (age < 5) {
+        console.log("You are a Toddler (under 5 years).");
+    } else if (age >= 5 && age <= 12) {
+        console.log("You are a Child (5-12 years).");
+    } else if (age >= 13 && age <= 19) {
+        console.log("You are a Teenager (13-19 years).");
+    } else if (age >= 20 && age <= 35) {
+        console.log("You are a Young Adult (20-35 years).");
+    } else if (age >= 36 && age <= 60) {
+        console.log("You are Middle-Aged (36-60 years).");
+    } else {
+        console.log("You are a Senior (over 60 years).");
+    }
+}
+
+
+//4.)Favorite Number Calculation:
+// Step 1: Declare a variable to hold the favorite number
+let theFavNumber = 7; // You can change this number to whatever the favorite number is
+
+// Step 2: Use a while loop to repeatedly ask the user for their guess
+let userGuess; // Variable to store the user's guess
+
+// Continue looping until the user guesses the correct number
+while (userGuess !== theFavNumber) {
+    // Step 3: Prompt the user to guess their favorite number
+    userGuess = parseInt(prompt("Guess my favorite number:")); // Convert input to an integer
+
+    // Step 4: Check if the guess is too high, too low, or correct
+    if (userGuess > theFavNumber) {
+        console.log("Too high! Try again."); // Log if the guess is too high
+    } else if (userGuess < theFavNumber) {
+        console.log("Too low! Try again."); // Log if the guess is too low
+    } else {
+        console.log("Correct! You've guessed the number!"); // Log if the guess is correct
+    }
+}
+
+//5.)Color Preferences: 
+// Step 1: Create an array to store three colors
+let colors = []; // Initializing an empty array to store color preferences
+
+// Step 2: Use a loop to get three user inputs for colors
+for (let i = 0; i < 3; i++) {
+    // Prompt the user to input a color
+    let userColor = prompt("Please enter a color you like:");
+
+    // Push the user’s input color into the colors array
+    colors.push(userColor);
+
+    // Step 3: Print the updated list of colors in the console
+    console.log(`Updated color list: ${colors.join(", ")}`);
+}
+
+// After collecting three colors, prompt the user to add more colors
+let addMore = true;
+
+// Loop to allow user to add more colors
+while (addMore) {
+    // Prompt for an additional color
+    let userColor = prompt("Please enter another color you like (or type 'exit' to finish):");
+
+    // Check if the user wants to exit the loop
+    if (userColor.toLowerCase() === 'exit') {
+        addMore = false; // Exit the loop
+    } else {
+        // Otherwise, push the color to the array
+        colors.push(userColor);
+        
+        // Print the updated color list
+        console.log(`Updated color list: ${colors.join(", ")}`);
+    }
+}
+
+// Final output of the colors array
+console.log(`Final list of colors: ${colors.join(", ")}`);
+
+//6.)The Grocery List:
+// Prompt user to create a grocery list (y/n)
+let createList = prompt("Do you want to create a grocery list? (y/n)");
+
+// Check if user responded with 'y'
+if (createList.toLowerCase() === 'y') {
+
+    // Ask for the number of items in the grocery list
+    let itemCount = prompt("How many items do you want to add to your grocery list?");
+    let grocery_list = []; // Initialize grocery list array
+
+    // Loop to get each grocery item from the user
+    for (let i = 0; i < itemCount; i++) {
+        // Prompt for each item and add to grocery_list
+        let item = prompt(`Enter item ${i + 1}:`);
+        grocery_list.push(item); // Add item to the list
+    }
+
+    // Sort the grocery list alphabetically and store in groceryList_Sort
+    let groceryList_Sort = grocery_list.sort();
+
+    // Reverse the grocery list and store in groceryList_Reverse
+    // Using slice to prevent modifying the original sorted array
+    let groceryList_Reverse = groceryList_Sort.slice().reverse();
+
+    // Print the lists using alert
+    alert("Grocery List: " + grocery_list);
+    alert("Sorted Grocery List: " + groceryList_Sort);
+    alert("Reversed Sorted Grocery List: " + groceryList_Reverse);
+} else {
+    alert("You chose not to create a grocery list.");
+}
+
+//7-8Student Enrollment:
+// Creating two arrays to store enrolled students for two subjects
+let DSA = [];  // Array for DSA students
+let WebDev = [];  // Array for Web Development students
+
+// Function to start the enrollment process
+function startEnrollment() {
+    let subjects = prompt("Select a subject: (A) DSA, (B) WebDev");
+    
+    // Process subject selection
+    switch (subjects.toUpperCase()) {
+        case 'A':
+            manageEnrollment(DSA, "DSA");
+            break;
+        case 'B':
+            manageEnrollment(WebDev, "WebDevelopment");
+            break;
+        default:
+            console.log("Invalid subject selected");
+            startEnrollment(); // Restart enrollment
+            break;
+    }
+}
+
+// Function to manage operations (enroll, unenroll, select another subject, exit)
+function manageEnrollment(subjectArray, subjectName) {
+    let operation = prompt(`Select an operation for ${subjectName}: (A) Enroll, (B) Unenroll, (C) Select Another Subject, (D) Exit`);
+
+    switch (operation.toUpperCase()) {
+        case 'A':
+            enrollStudent(subjectArray);
+            break;
+        case 'B':
+            unenrollStudent(subjectArray);
+            break;
+        case 'C':
+            startEnrollment(); // Go back to subject selection
+            break;
+        case 'D':
+            exitProgram(subjectArray, subjectName);
+            break;
+        default:
+            console.log("Invalid operation selected");
+            manageEnrollment(subjectArray, subjectName); // Restart operation menu
+            break;
+    }
+}
+
+// Function to enroll a student
+function enrollStudent(subjectArray) {
+    let studentName = prompt("Enter the name of the student to enroll:");
+    
+    // Adding the student's name to the chosen subject's array
+    subjectArray.push(studentName);
+    console.log(`${studentName} has been enrolled.`);
+    
+    manageEnrollment(subjectArray); // Return to operations menu
+}
+
+// Function to unenroll a student
+function unenrollStudent(subjectArray) {
+    // Listing currently enrolled students
+    console.log("Currently enrolled students: ", subjectArray.join(", "));
+    
+    // Asking for the name of the student to unenroll
+    let studentName = prompt("Enter the name of the student to unenroll:");
+    
+    // Finding the index of the student to remove
+    let index = subjectArray.indexOf(studentName);
+    
+    // Remove the student if found
+    if (index > -1) {
+        subjectArray.splice(index, 1); // Remove student by index
+        console.log(`${studentName} has been unenrolled.`);
+    } else {
+        console.log(`${studentName} not found in the list.`);
+    }
+    
+    manageEnrollment(subjectArray); // Return to operations menu
+}
+
+// Function to exit the program and display the enrolled students
+function exitProgram(subjectArray, subjectName) {
+    console.log(`Enrolled students in ${subjectName}: `, subjectArray.join(", "));
+    console.log("Exiting the program.");
+}
+
+// Start the enrollment process
+startEnrollment();
