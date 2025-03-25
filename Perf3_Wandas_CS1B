@@ -1,0 +1,81 @@
+//Act 1 working with arrays
+
+// Create an array to store favorite singers
+let favSingers = ["Singer1", "Singer2", "Singer3"];
+
+// Log the first singer in the array using index notation
+console.log("First favorite singer:", favSingers[0]);
+
+// Create an array to store favorite numbers
+let favNumbers = [7, 14, 21, 28];
+
+// Create a mixed array with different data types
+let mixedArr = ["string", ["otherArray"], 123, true];
+
+// Log each item in mixedArr using index notation
+console.log("First item:", mixedArr[0]);   // "string"
+console.log("Second item:", mixedArr[1]);  // ["otherArray"]
+console.log("Third item:", mixedArr[2]);   // 123
+console.log("Fourth item:", mixedArr[3]);  // true
+
+//Act 2 Array method practice
+
+// 1. Use concat() to join two arrays
+let arr1 = ["Cecile", "Lone"];
+let arr2 = ["Emil", "Tobias", "Linus"];
+let combinedArr = arr1.concat(arr2);
+console.log("Concatenated Array:", combinedArr);
+
+// 2. Use push() to add an element to the array
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Kiwi");
+console.log("After push:", fruits);
+
+// 3. Use unshift() to add elements at the beginning of an array
+let numbers = [1, 2, 3];
+numbers.unshift(4, 5);
+console.log("After unshift:", numbers);
+
+// 4. Use pop() to remove the last element
+fruits.pop();
+console.log("After pop:", fruits);
+
+// 5. Use shift() to remove the first element
+numbers.shift();
+console.log("After shift:", numbers);
+
+// 6. Use sort() to alphabetically sort the fruits array
+fruits.sort();
+console.log("Sorted fruits:", fruits);
+
+// 7. Use slice() to create a new array containing a portion of the fruits array
+let slicedFruits = fruits.slice(1, 3);
+console.log("Sliced fruits:", slicedFruits);
+
+// 8. Use splice() to insert and remove elements in an array
+let months = ["Jan", "March", "April"];
+months.splice(1, 0, "Feb"); // Insert "Feb" at index 1
+console.log("After splice (insert):", months);
+
+months.splice(2, 1); // Remove "March"
+console.log("After splice (remove):", months);
+
+//Act 3 Working with object
+
+// Create an object with properties: type, model, and color
+let car = {
+    type: "Sedan",
+    model: "Corolla",
+    color: "Red"
+};
+
+// Use typeof to check and log the type of the object
+console.log("Type of 'car':", typeof car);
+
+// Update the type property to "Toyota"
+car.type = "Toyota";
+console.log("Updated car object:", car);
+
+// Add a new property 'wheels' with the value 4
+car.wheels = 4;
+console.log("Updated car object with wheels:", car);
