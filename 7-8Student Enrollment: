@@ -1,0 +1,90 @@
+//7-8Student Enrollment:
+
+// Creating two arrays to store enrolled students for two subjects
+let DSA = [];  // Array for DSA students
+let WebDev = [];  // Array for Web Development students
+
+// Function to start the enrollment process
+function startEnrollment() {
+    let subjects = prompt("Select a subject: (A) DSA, (B) WebDev");
+
+    // Process subject selection
+    switch (subjects.toUpperCase()) {
+        case 'A':
+            manageEnrollment(DSA, "DSA");
+            break;
+        case 'B':
+            manageEnrollment(WebDev, "WebDevelopment");
+            break;
+        default:
+            console.log("Invalid subject selected");
+            startEnrollment(); // Restart enrollment
+            break;
+    }
+}
+
+// Function to manage operations (enroll, unenroll, select another subject, exit)
+function manageEnrollment(subjectArray, subjectName) {
+    let operation = prompt(`Select an operation for ${subjectName}: (A) Enroll, (B) Unenroll, (C) Select Another Subject, (D) Exit`);
+
+    switch (operation.toUpperCase()) {
+        case 'A':
+            enrollStudent(subjectArray);
+            break;
+        case 'B':
+            unenrollStudent(subjectArray);
+            break;
+        case 'C':
+            startEnrollment(); // Go back to subject selection
+            break;
+        case 'D':
+            exitProgram(subjectArray, subjectName);
+            break;
+        default:
+            console.log("Invalid operation selected");
+            manageEnrollment(subjectArray, subjectName); // Restart operation menu
+            break;
+    }
+}
+
+// Function to enroll a student
+function enrollStudent(subjectArray) {
+    let studentName = prompt("Enter the name of the student to enroll:");
+
+    // Adding the student's name to the chosen subject's array
+    subjectArray.push(studentName);
+    console.log(`${studentName} has been enrolled.`);
+
+    manageEnrollment(subjectArray); // Return to operations menu
+}
+
+// Function to unenroll a student
+function unenrollStudent(subjectArray) {
+    // Listing currently enrolled students
+    console.log("Currently enrolled students: ", subjectArray.join(", "));
+
+    // Asking for the name of the student to unenroll
+    let studentName = prompt("Enter the name of the student to unenroll:");
+
+    // Finding the index of the student to remove
+    let index = subjectArray.indexOf(studentName);
+
+    // Remove the student if found
+    if (index > -1) {
+        subjectArray.splice(index, 1); // Remove student by index
+        console.log(`${studentName} has been unenrolled.`);
+    } else {
+        console.log(`${studentName} not found in the list.`);
+    }
+
+    manageEnrollment(subjectArray); // Return to operations menu
+}
+
+// Function to exit the program and display the enrolled students
+function exitProgram(subjectArray, subjectName) {
+    console.log(`Enrolled students in ${subjectName}: `, subjectArray.join(", "));
+    console.log("Exiting the program.");
+}
+
+// Start the enrollment process
+startEnrollment();
