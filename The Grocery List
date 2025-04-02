@@ -1,0 +1,33 @@
+//6.)The Grocery List:
+
+// Prompt user to create a grocery list (y/n)
+let createList = prompt("Do you want to create a grocery list? (y/n)");
+
+// Check if user responded with 'y'
+if (createList.toLowerCase() === 'y') {
+
+    // Ask for the number of items in the grocery list
+    let itemCount = prompt("How many items do you want to add to your grocery list?");
+    let grocery_list = []; // Initialize grocery list array
+
+    // Loop to get each grocery item from the user
+    for (let i = 0; i < itemCount; i++) {
+        // Prompt for each item and add to grocery_list
+        let item = prompt(`Enter item ${i + 1}:`);
+        grocery_list.push(item); // Add item to the list
+    }
+
+    // Sort the grocery list alphabetically and store in groceryList_Sort
+    let groceryList_Sort = grocery_list.sort();
+
+    // Reverse the grocery list and store in groceryList_Reverse
+    // Using slice to prevent modifying the original sorted array
+    let groceryList_Reverse = groceryList_Sort.slice().reverse();
+
+    // Print the lists using alert
+    alert("Grocery List: " + grocery_list);
+    alert("Sorted Grocery List: " + groceryList_Sort);
+    alert("Reversed Sorted Grocery List: " + groceryList_Reverse);
+} else {
+    alert("You chose not to create a grocery list.");
+}
