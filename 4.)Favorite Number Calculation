@@ -1,0 +1,22 @@
+//4.)Favorite Number Calculation:
+
+// Step 1: Declare a variable to hold the favorite number
+let theFavNumber = 7; // You can change this number to whatever the favorite number is
+
+// Step 2: Use a while loop to repeatedly ask the user for their guess
+let userGuess; // Variable to store the user's guess
+
+// Continue looping until the user guesses the correct number
+while (userGuess !== theFavNumber) {
+    // Step 3: Prompt the user to guess their favorite number
+    userGuess = parseInt(prompt("Guess my favorite number:")); // Convert input to an integer
+
+    // Step 4: Check if the guess is too high, too low, or correct
+    if (userGuess > theFavNumber) {
+        console.log("Too high! Try again."); // Log if the guess is too high
+    } else if (userGuess < theFavNumber) {
+        console.log("Too low! Try again."); // Log if the guess is too low
+    } else {
+        console.log("Correct! You've guessed the number!"); // Log if the guess is correct
+    }
+}
