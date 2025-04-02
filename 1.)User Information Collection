@@ -1,0 +1,18 @@
+// 1.)User Information Collection:
+// userProfile.js
+
+// Collecting user information using prompt()
+let fullName = prompt("Please enter your full name (first and last name):");
+// Prompt for the user's age
+let age = prompt("Please enter your age:");
+// Prompt for the user's favorite number
+let favoriteNumber = prompt("Please enter your favorite number:");
+// Prompt for the user's favorite color
+let favoriteColor = prompt("Please enter your favorite color:");
+
+// Logging the collected information to the console
+console.log("User Information:");
+console.log("Full Name: " + fullName); // Output the full name
+console.log("Age: " + age); // Output the age
+console.log("Favorite Number: " + favoriteNumber); // Output the favorite number
+console.log("Favorite Color: " + favoriteColor); // Output the favorite color
