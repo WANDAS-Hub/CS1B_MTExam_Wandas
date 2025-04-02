@@ -1,0 +1,39 @@
+//5.)Color Preferences: 
+
+// Step 1: Create an array to store three colors
+let colors = []; // Initializing an empty array to store color preferences
+
+// Step 2: Use a loop to get three user inputs for colors
+for (let i = 0; i < 3; i++) {
+    // Prompt the user to input a color
+    let userColor = prompt("Please enter a color you like:");
+
+    // Push the user’s input color into the colors array
+    colors.push(userColor);
+
+    // Step 3: Print the updated list of colors in the console
+    console.log(`Updated color list: ${colors.join(", ")}`);
+}
+
+// After collecting three colors, prompt the user to add more colors
+let addMore = true;
+
+// Loop to allow user to add more colors
+while (addMore) {
+    // Prompt for an additional color
+    let userColor = prompt("Please enter another color you like (or type 'exit' to finish):");
+
+    // Check if the user wants to exit the loop
+    if (userColor.toLowerCase() === 'exit') {
+        addMore = false; // Exit the loop
+    } else {
+        // Otherwise, push the color to the array
+        colors.push(userColor);
+
+        // Print the updated color list
+        console.log(`Updated color list: ${colors.join(", ")}`);
+    }
+}
+
+// Final output of the colors array
+console.log(`Final list of colors: ${colors.join(", ")}`);
